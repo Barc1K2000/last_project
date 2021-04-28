@@ -1,4 +1,4 @@
-const sql = require('mysql2')
+const sql = require('mysql2/promise')
 
 
 const pool = sql.createPool({
@@ -10,6 +10,7 @@ const pool = sql.createPool({
 }, ()=>{
     console.log("db is connected")
 })
+
 module.exports = {
   sql, pool
 }
