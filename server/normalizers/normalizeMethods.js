@@ -7,7 +7,7 @@ const take_arr =  (data) => {
     data.map((item) => {
         item =  Object.values(item)
         item=item.toString()
-        item = item.replaceAll(", ", "_")
+        item = item.replace(/, /g,"_")
         item=item.split(",")
         arr.push(item)
     })
