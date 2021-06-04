@@ -1,0 +1,17 @@
+.schedulepage{
+    background-color: #fff;
+    color:#000;
+    display:flex;
+    flex-direction: column;
+
+}
+.schedulepage h1{
+    width:650px;
+    padding: 0 auto;
+    margin: auto auto;
+}
+.scheduleitems{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

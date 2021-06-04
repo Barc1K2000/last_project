@@ -12,23 +12,23 @@ export const ClientsList = (props) =>{
     },[request])
 
     const deleteHandler = (id) =>{
-        //console.log(clients=>({clients:clients.users.filter(el=>el.id!==id)}))
-        setClients({users:[clients.users.filter(el=>el.id!=id)]})
-        //const data = request(`/api/client/deleteClient/${id}`, "POST", null)
-        console.log(clients)
+        console.log(clients.users)
+        let usersDelete = clients.users
+        usersDelete.splice(id,1)
+        setClients({users:[...usersDelete]})
 
     }
 
     useEffect(()=>{
         fetchData()
-    },[fetchData])
+        },[fetchData])
     if (loading) return <h1>Loading</h1>
     return(
         <div>
             <ul>
                 {
                     clients.users.map((item)=>{
-                       return <ClientsListItem {...item}  deleteHandler={deleteHandler}/>
+                       return <ClientsListItem key={item.id.toString()} {...item}  deleteHandler={deleteHandler}/>
                     })
                 }
             </ul>

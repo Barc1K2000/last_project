@@ -10,6 +10,8 @@ app.use(bodyParser.json())
 
 
 app.use("/api/client/", require("./routes/clients"))
+app.use("/api/", require("./routes/schedule"))
+
 
 
 app.listen(PORT,

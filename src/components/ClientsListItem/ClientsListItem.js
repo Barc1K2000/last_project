@@ -1,6 +1,5 @@
 export const ClientsListItem = (props)=>{
     const {id, name, surname, phone_number, deleteHandler} = props
-    console.log(deleteHandler)
     return(
          <li>
              <h3>{id}</h3>

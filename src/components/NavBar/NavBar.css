@@ -1,0 +1,39 @@
+ .navbar{
+     display:flex;
+     justify-content: space-between;
+     background-color: #000;
+ }
+
+
+
+ .navbar ul{
+    display:flex;
+    justify-content: center;
+    color:#fff;
+    height:50px;
+}
+
+.navbar ul li{
+    
+    list-style-type: none;
+    margin:auto 40px;
+    
+    
+}
+.social{
+    margin:auto 20px;
+    display:flex;
+    justify-content: center;
+}
+.social i{
+    margin-left: 20px;
+    color:#fff;
+    font-size: 40px;;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:#fff;
+    padding:20px 20px;
+    border:2px solid #826822;
+    background-color: #c99c20;
+}

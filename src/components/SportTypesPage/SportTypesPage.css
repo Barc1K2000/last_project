@@ -1,0 +1,16 @@
+.sporttypes{
+    color:#fff;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sporttypes h1{
+    padding: 0;
+    margin: 0 auto;
+}
+.sporttypesitem{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
