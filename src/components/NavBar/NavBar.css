@@ -37,3 +37,15 @@
     border:2px solid #826822;
     background-color: #c99c20;
 }
+.Auth {
+    display:flex;
+    flex-direction: column;
+}
+.Auth a{
+    padding: 10px 20px;
+    background-color: red;
+    border: 2px solid blue;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color:white;
+}

@@ -15,3 +15,23 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+table {
+    margin:30px auto;
+    border: 1px solid grey;
+    width:70%;
+ }
+ th {
+    border: 1px solid grey;
+ }
+ /* границы ячеек тела таблицы */
+ td {
+    border: 1px solid grey;
+ }
+ input{
+     width:100%;
+ }
+ .addSchedule{
+     display: flex;
+     width:70%;
+     margin: 30px auto;;
+ }

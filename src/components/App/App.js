@@ -1,25 +1,24 @@
-import {ClientsList} from "../ClientsList/ClientsList"
-import { CoachPage } from "../CoachPage/CoachPage";
 import {NavBar} from "../NavBar/NavBar"
-import {SchedulePage} from "../SchedulePage/SchedulePage"
-import {SportTypesPage} from "../SportTypesPage/SportTypesPage"
-import { SubscriptionPage } from "../SubscriptionPage/SubscriptionPage";
-import {Route, Switch, BrowserRouter, Link} from "react-router-dom"
-import {useHttp} from "../../hook.http/http.hook"
+import {BrowserRouter} from "react-router-dom"
+import { useAuth } from "../../hooks/auth.hook";
+import { AuthContext } from "../../context/authContext";
+import { useRoutes } from "../../routes";
+
 function App() {
-  const {loading, request} = useHttp()
+  const {token, login,logout, userId,isAdmin} = useAuth()
+  const isAuthenticated = !!token
+
   return (
+    <AuthContext.Provider value={{token,login,logout,userId,isAuthenticated,isAdmin}}>
     <div className="App">
       <BrowserRouter>
-      <NavBar/>
-      <Route path='/schedule' component={SchedulePage} render={()=><SchedulePage request={request} loading={loading} />} />
-      <Route path='/sporttypes' component={SportTypesPage} />
-      <Route path='/subscription' component={SubscriptionPage} />
-      <Route path='/coach' component={CoachPage} />
-      <Route path='/clientslist' component={ClientsList} />
+      <NavBar isAuthenticated={isAuthenticated}/>
+      {useRoutes(isAuthenticated)}
       </BrowserRouter>
     </div>
+    </AuthContext.Provider>
   );
 }
+
 
 export default App;

@@ -1,15 +1,15 @@
-import {useHttp} from "../../hook.http/http.hook"
-import {useState,useCallback, useEffect} from "react"
+
+import {useState,useCallback} from "react"
 import {ClientsListItem} from "../ClientsListItem/ClientsListItem"
 
 export const ClientsList = (props) =>{
-    const {loading,request} = useHttp()
+
     const [clients, setClients] = useState({users:[]})
     const fetchData = useCallback(async()=>{
-        const data =  await request("/api/client/")
+        const data =  []
         setClients(data)
         
-    },[request])
+    },[])
 
     const deleteHandler = (id) =>{
         console.log(clients.users)
@@ -19,10 +19,10 @@ export const ClientsList = (props) =>{
 
     }
 
-    useEffect(()=>{
-        fetchData()
-        },[fetchData])
-    if (loading) return <h1>Loading</h1>
+    //useEffect(()=>{
+    //    fetchData()
+    //    },[fetchData])
+
     return(
         <div>
             <ul>
